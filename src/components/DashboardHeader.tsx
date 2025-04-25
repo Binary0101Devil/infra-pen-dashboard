@@ -19,6 +19,11 @@ const DashboardHeader = () => {
           <span className="text-cyan-400">Infrastructure Testing</span>
         </div>
       </div>
+      
+      {/* Binary0101Devil signature */}
+      <div className="container mx-auto mt-2 text-right">
+        <p className="text-cyan-500 text-xs italic">Created by Binary0101Devil</p>
+      </div>
     </header>
   );
 };

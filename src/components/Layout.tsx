@@ -13,6 +13,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <div className="container mx-auto text-center text-sm text-gray-500">
           <p>Infrastructure Penetration Testing Guide &copy; {new Date().getFullYear()}</p>
           <p className="mt-1">For educational and authorized testing purposes only.</p>
+          <p className="mt-2 text-cyan-600">Created by Binary0101Devil</p>
         </div>
       </footer>
     </div>
