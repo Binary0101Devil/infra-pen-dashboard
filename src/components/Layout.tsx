@@ -22,7 +22,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           className="flex items-center px-4 py-2 bg-cyan-900/30 hover:bg-cyan-800/40 text-cyan-100 rounded-md shadow-lg border border-cyan-900/50 transition-colors"
         >
           <Server className="w-4 h-4 mr-2" /> 
-          Services
+          Service Enumeration
         </Link>
       </div>
       {children}
