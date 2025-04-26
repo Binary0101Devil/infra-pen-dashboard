@@ -46,7 +46,7 @@ const Index = () => {
               {activeCategory ? `${activeCategory.charAt(0).toUpperCase() + activeCategory.slice(1)} Techniques` : "Penetration Testing Techniques"}
             </h2>
             
-            <div className="space-y-4">
+            <div className="space-y-4 max-h-[calc(100vh-300px)] overflow-y-auto pr-2 scrollbar">
               {filteredTechniques.map((technique) => (
                 <TechniqueCard
                   key={technique.id}
@@ -63,10 +63,17 @@ const Index = () => {
             {activeTechnique ? (
               <TechniqueDetail technique={activeTechnique} />
             ) : (
-              <div className="bg-gray-800 rounded-lg p-8 text-center">
-                <h2 className="text-2xl font-bold mb-4 text-white">Infrastructure Penetration Testing Dashboard</h2>
+              <div className="bg-gray-900 rounded-lg p-8 text-center border border-gray-800 shadow-[0_5px_15px_rgba(0,0,0,0.3)]">
+                <h2 className="text-2xl font-bold mb-4 text-cyan-400">Infrastructure Penetration Testing Techniques</h2>
+                <div className="mb-6 inline-block p-4 bg-gray-800 rounded-lg shadow-inner border border-gray-700">
+                  <div className="text-xs font-mono text-green-400 text-left">
+                    <p># Initialize penetration test</p>
+                    <p>$ sudo ./pentest -t infrastructure -m reconnaissance</p>
+                    <p># Select a technique from the sidebar to begin...</p>
+                  </div>
+                </div>
                 <p className="text-gray-300 mb-4">
-                  Welcome to the Infrastructure Penetration Testing Dashboard. This interactive dashboard provides detailed information on various penetration testing techniques used in infrastructure security assessments.
+                  Welcome to the Infrastructure Penetration Testing interface. This interactive dashboard provides detailed information on various penetration testing techniques used in infrastructure security assessments.
                 </p>
                 <p className="text-gray-300">
                   Select a technique from the sidebar to view detailed information, attack steps, methodology, and mitigation strategies.

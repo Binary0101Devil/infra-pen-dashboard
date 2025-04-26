@@ -1,29 +1,17 @@
 
-import { Shield, ChevronRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Shield } from "lucide-react";
 
 const DashboardHeader = () => {
   return (
-    <header className="bg-gradient-to-r from-blue-900 to-gray-900 p-6 shadow-lg">
-      <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between">
-        <div className="flex items-center mb-4 sm:mb-0">
-          <Shield className="h-10 w-10 text-cyan-400 mr-3" />
+    <header className="bg-gradient-to-r from-gray-900 to-black p-6 border-b border-cyan-900/30 shadow-[0_5px_15px_rgba(0,229,255,0.1)]">
+      <div className="container mx-auto">
+        <div className="flex items-center">
+          <Shield className="h-10 w-10 text-cyan-400 mr-3 animate-pulse-glow" />
           <div>
             <h1 className="text-2xl font-bold text-white">Pentest with Binary0101Devil</h1>
-            <p className="text-gray-300 text-sm">Infrastructure Penetration Testing Guide</p>
+            <p className="text-gray-300 text-sm">Infrastructure Penetration Testing Techniques</p>
           </div>
         </div>
-        
-        <div className="flex items-center space-x-1 text-sm">
-          <Link to="/" className="text-gray-400 hover:text-cyan-400 transition-colors">Dashboard</Link>
-          <ChevronRight className="h-4 w-4 text-gray-400" />
-          <span className="text-cyan-400">Infrastructure Penetration Testing Techniques</span>
-        </div>
-      </div>
-      
-      {/* Binary0101Devil signature */}
-      <div className="container mx-auto mt-2 text-right">
-        <p className="text-cyan-500 text-xs italic">Created by Binary0101Devil</p>
       </div>
     </header>
   );

@@ -1,5 +1,4 @@
 
-import { useState } from "react";
 import { techniqueCategories } from "@/data/pentest-techniques";
 
 interface TechniqueCategoriesProps {
@@ -14,10 +13,10 @@ const TechniqueCategories = ({ onSelectCategory, activeCategory }: TechniqueCate
       <div className="flex flex-wrap gap-2">
         <button
           onClick={() => onSelectCategory(null)}
-          className={`px-3 py-1 rounded-full text-sm ${
+          className={`px-3 py-1 rounded-full text-sm transition-all duration-300 ${
             activeCategory === null
-              ? "bg-cyan-600 text-white"
-              : "bg-gray-700 text-gray-300 hover:bg-gray-600"
+              ? "bg-cyan-600 text-white shadow-[0_0_8px_rgba(0,229,255,0.5)]"
+              : "bg-gray-800 text-gray-300 hover:bg-gray-700 hover:border-cyan-500 border border-gray-700"
           }`}
         >
           All Techniques
@@ -26,10 +25,10 @@ const TechniqueCategories = ({ onSelectCategory, activeCategory }: TechniqueCate
           <button
             key={id}
             onClick={() => onSelectCategory(id)}
-            className={`px-3 py-1 rounded-full text-sm ${
+            className={`px-3 py-1 rounded-full text-sm transition-all duration-300 ${
               activeCategory === id
-                ? "bg-cyan-600 text-white"
-                : "bg-gray-700 text-gray-300 hover:bg-gray-600"
+                ? "bg-cyan-600 text-white shadow-[0_0_8px_rgba(0,229,255,0.5)]"
+                : "bg-gray-800 text-gray-300 hover:bg-gray-700 hover:border-cyan-500 border border-gray-700"
             }`}
           >
             {name}
