@@ -4,15 +4,28 @@ import Layout from "@/components/Layout";
 import DashboardHeader from "@/components/DashboardHeader";
 import TechniqueCard from "@/components/TechniqueCard";
 import TechniqueDetail from "@/components/TechniqueDetail";
+import TechniqueCategories from "@/components/TechniqueCategories";
 import { techniques } from "@/data/pentest-techniques";
 
 const Index = () => {
   const [activeId, setActiveId] = useState<string | null>(null);
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
   // Function to handle technique card click
   const handleTechniqueClick = (id: string) => {
     setActiveId(id === activeId ? null : id);
   };
+
+  // Function to handle category selection
+  const handleCategorySelect = (categoryId: string | null) => {
+    setActiveCategory(categoryId);
+    setActiveId(null); // Reset active technique when changing category
+  };
+
+  // Filter techniques based on selected category
+  const filteredTechniques = activeCategory 
+    ? techniques.filter(tech => tech.category === activeCategory)
+    : techniques;
 
   const activeTechnique = activeId ? techniques.find(tech => tech.id === activeId) : null;
 
@@ -24,9 +37,17 @@ const Index = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Techniques sidebar */}
           <div className="lg:col-span-1">
-            <h2 className="text-xl font-bold mb-4 text-cyan-400">Penetration Testing Techniques</h2>
+            <TechniqueCategories 
+              onSelectCategory={handleCategorySelect} 
+              activeCategory={activeCategory} 
+            />
+            
+            <h2 className="text-xl font-bold mb-4 text-cyan-400">
+              {activeCategory ? `${activeCategory.charAt(0).toUpperCase() + activeCategory.slice(1)} Techniques` : "Penetration Testing Techniques"}
+            </h2>
+            
             <div className="space-y-4">
-              {techniques.map((technique) => (
+              {filteredTechniques.map((technique) => (
                 <TechniqueCard
                   key={technique.id}
                   technique={technique}
