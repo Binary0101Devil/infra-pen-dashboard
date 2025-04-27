@@ -1,7 +1,6 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import { Server } from "lucide-react";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -16,13 +15,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           className="px-4 py-2 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-md shadow-lg border border-gray-700 transition-colors"
         >
           Home
-        </Link>
-        <Link 
-          to="/services" 
-          className="flex items-center px-4 py-2 bg-cyan-900/30 hover:bg-cyan-800/40 text-cyan-100 rounded-md shadow-lg border border-cyan-900/50 transition-colors"
-        >
-          <Server className="w-4 h-4 mr-2" /> 
-          Service Enumeration
         </Link>
       </div>
       {children}
